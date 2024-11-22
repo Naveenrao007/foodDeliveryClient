@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.SignInContainer {
+  width: 100%;
+  display: flex;
+  font-family: var(--poppins);
+}
+.leftSection {
+  width: 50%;
+  padding: 0.5rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.rightSection {
+  width: 50%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+.rightSection > img {
+  width: 100%;
+  height: 90%;
+  max-height: 37rem;
+}
+.SignInMainImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.SignInMainImg > img {
+  width: 50%;
+}
+
+.formcontainer {
+  width: 60%;
+}
+.SignInMsg {
+  margin-top: 0rem;
+  color: #313957;
+  font-size: 16px;
+}
+.formInput {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  outline: none;
+  color: #8897ad;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.formInput:focus{
+  border-color: #4dffff
+  ;
+  box-shadow: 0 0 5px rgb(77, 255, 255 0.5);
+ 
+  background-color:#fff;
+} 
+.formBtn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: var(--text-white);
+  background-color: var(--text-yellow-color);
+  font-size: 20px;
+}
+.formBtn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  color: var(--text-white);
+  background-color: var(--text-yellow-color);
+  font-size: 20px;
+}
+.formBtnGoggle {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  outline: none;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  background-color: var(--text-white);
+  align-items: center;
+  cursor: pointer;
+  color: #313957;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  font-size: 20px;
+  display: none;
+}
+.divideLineContainer {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin: 0px auto;
+  gap: 0.5rem;
+  display: none;
+}
+.divideLineContainer > p {
+  border: 1px solid #cfdfe2;
+  width: 100%;
+  height: 1px;
+}
+.formSingInlabel {
+  margin: 0.2rem 0rem;
+  color: #0c1421;
+  font-weight: 400;
+}
+
+@media (max-width: 800px) {
+  .SignInContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .leftSection {
+    width: 100%;
+  }
+  .rightSection {
+    width: 100%;
+  }
+  .formcontainer {
+    width: 90%;
+  }
+  .SignInMsg {
+    margin-top: 1rem;
+    font-size: 15px;
+  }
+  .formBtnGoggle {
+    display: flex;
+  }
+  .divideLineContainer {
+    display: flex;
+
+    margin-top: 1rem;
+  }
+  .rightSection {
+    display: none;
+  }
+  .formInput,.formBtn , .formBtnGoggle{
+    padding: 0.8rem;
+
+  }
+}

@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--poppins);
+}
+.homeContainer{
+    margin: 0rem 2rem;
+
+}
+.ShoppingBasket {
+  background-color: var(--green-color);
+  display: flex;
+  align-items: center;
+  border-radius: 0px 0px 12px 12px;
+  
+  gap: 2rem;
+}
+.borderR {
+  border-right: 1px solid #ffffff;
+}
+.borderL {
+  border-left: 1px solid #ffffff;
+}
+
+.cartPadding{
+    padding: 0.5rem 1rem 0.2rem 1rem; 
+}
+.itemValueH{
+    min-width: 3rem;
+}
+.myCartText{
+    color: white;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.userAuth{
+    background-color: #03081F;
+    color: #ffffff;
+    display: inline-flex;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    gap: 0.5rem;
+    
+}
+.pages{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    color: #000000;
+}
+.active{
+    background-color: var(--text-yellow-color);
+    color: #ffffff !important;
+    padding: 0.2rem 1.5rem;
+    border-radius: 20px;
+}

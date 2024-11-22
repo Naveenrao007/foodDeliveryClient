@@ -9,38 +9,34 @@ function Footer() {
   return (
     <footer className={style.footer}>
       <section className={`${style.footerTopContainer}`}>
-        <section className={style.topSection}>
+        <section >
           <div className={style.logo}>
             <img src="../../../logo1.png" alt="Company Logo" />
           </div>
-          <div className={`${style.storeps} flexdr`}>
-            <div className={`bgColorBlack ${style.appStoreImg}`}>
-              <img src="../../../appStore.png" alt="App Store" />
-            </div>
-            <div>
-              <img src="../../../playStore.png" alt="Play Store" />
-            </div>
+          <div className={`${style.storeImg} flexdr`}>
+          <img src="../../../Group.png" alt="Store Img" />
+
           </div>
-          <p className={`${style.companyInfo} font15px fw400`}>
-            Company # 490039-445, Registered with <br />
+          <p className={`${style.companyInfo} mrtop1rem font15px fw400`}>
+            Company # 490039-445, Registered with  <br />
             House of Companies.
           </p>
         </section>
 
         <section className={style.emailSection}>
           <div>
-            <h2 className={`${style.dealText} font18px fw700`}>
+            <h2 className={`${style.dealText} font18px  fw700`}>
               Get Exclusive Deals in your Inbox
             </h2>
             <div className={`${style.inputContainer}`} >
               <input placeholder="your@gmail.com" type="text" className={`${style.inputField}`} />
               <button className={`${style.subscribeBtn} cp  `}>Subscribe</button>
             </div>
-            <p className={`${style.emailPolicy} font13px fw400`}>
+            <p className={`${style.emailPolicy} mrtop1rem font13px fw400`}>
               We won't spam, read our <span>email policy</span>
             </p>
           </div>
-          <div className={style.socialMedia}>
+          <div className={`${style.socialMedia} mrtop1rem`}>
             <div className={style.socialIcons}>
               <img className="cp" src={facebookIcon} alt="Facebook" />
               <img className="cp" src={instagramIcon} alt="Instagram" />
