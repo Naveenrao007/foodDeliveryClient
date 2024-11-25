@@ -77,7 +77,9 @@ head {
 .jcc {
   justify-content: center;
 }
-
+.jcfe{
+  justify-content: flex-end;
+}
 .alineItemCenter {
   align-items: center;
 }
@@ -98,6 +100,7 @@ head {
 .cp {
   cursor: pointer;
 }
+.gaphalfrem{gap: 0.5rem;}
 .gap1rem{gap: 1rem;}
 .gap2rem{gap: 2rem;}
 .gap3rem{gap: 3rem;}
@@ -219,4 +222,7 @@ head {
 }
 .m-auto{
   margin: 0px auto;
+}
+.pdr1rem{
+  padding-right: 1rem;
 }
