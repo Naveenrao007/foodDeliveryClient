@@ -210,6 +210,9 @@ head {
 .mrtop1rem {
   margin-top: 1rem;
 }
+.mrtop2rem {
+  margin-top: 2rem;
+}
 .mrleft1rem{
   margin-left: 1rem;
 }
@@ -219,6 +222,9 @@ head {
 }
 .w-full{
   width:  100%;
+}
+.w-half{
+  width: 50%;
 }
 .m-auto{
   margin: 0px auto;
