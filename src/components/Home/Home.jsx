@@ -298,7 +298,7 @@ function Home() {
                   <div>
                     <img className={`${style.foodIcon}`} src={Food} alt="" />
                   </div>
-                  <p className="font14px"> Your can track your order status with delivery time</p>
+                  <p className="font14px"> Your can track your order status with delivery time</p>
                 </div>
               </div>
               <div className={`${style.OrderFoodContainer}`}>
@@ -307,7 +307,7 @@ function Home() {
                   <div>
                     <img className={`${style.foodIcon}`} src={Order} alt="" />
                   </div>
-                  <p className="font14px"> Receive your order at a lighting fast speed!</p>
+                  <p className="font14px"> Receive your order at a lighting fast speed!</p>
                 </div>
               </div>
             </div>

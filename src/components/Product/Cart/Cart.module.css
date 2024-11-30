@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+  }
+  
+  /* Container styles */
+  .part4,
+  .itemContainer {
+    display: flex;
+    flex-wrap: wrap; /* Enable wrapping when space is insufficient */
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 2rem; /* Common margin for both */
+  }
+  
+  /* Common styles for child items */
+  .part4 > div,
+  .itemContainer > * {
+    flex: 1 1 calc(33% - 1rem); /* Each item takes ~33% of the width */
+    max-width: calc(33% - 1rem); /* Prevent items from exceeding this width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Image styles */
+  .responsiveImage {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .Sections{
+    margin: 1rem 0rem ;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  .responsiveImage:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Breakpoints for responsive design */
+  @media (max-width: 1024px) {
+    .part4 > div,
+    .itemContainer > * {
+      flex: 1 1 calc(50% - 1rem); /* Each item takes ~50% of the width */
+      max-width: calc(50% - 1rem);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .part4 > div,
+    .itemContainer > * {
+      flex: 1 1 calc(100% - 1rem); /* Each item takes full width */
+      max-width: calc(100% - 1rem);
+    }
+  }
+  
