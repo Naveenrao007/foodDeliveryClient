@@ -30,60 +30,15 @@ import GrpImg2 from "../../assets/images/Group16.png";
 import Food from "../../assets/images/food1.png";
 import Order from "../../assets/images/order1.png";
 import OrderFood from "../../assets/images/order-food1.png";
-
+import Header from "../Header/Header";
+import Restaurants from "../Restaurants/Restaurants";
+import { useNavigate } from "react-router-dom";
+ 
 function Home() {
+  const navigate = useNavigate()
   return (
     <div className={`${style.homeContainer}`}>
-      <div className="flex jcsb">
-        <div className="flex alineItemCenter">
-          <img src={Star} alt="star" />
-          <p className="mrleft1rem">
-            Get 5% Off your first order,{" "}
-            <span className="textyellow underline">Promo: ORDER5</span>
-          </p>
-        </div>
-        <div className={`flex gap2rem`}>
-          <div className="flex alineItemCenter">
-            <img src={Location} alt="location" />
-            <p className="mrleft1rem">Regent Street, A4, A4201, London</p>
-            <p className="textyellow underline mrleft1rem">Change Location</p>
-          </div>
-          <div className={`${style.ShoppingBasket} `}>
-            <div
-              className={`flex  alineItemCenter ${style.borderR} ${style.cartPadding} `}
-            >
-              <div className={``}>
-                <img src={ShoppingBasket} alt="shoppingBasket" />
-              </div>
-              <div className={`${style.myCartText}`}>My Cart</div>
-            </div>
-            <div className={`${style.itemValueH}`}>
-              {/* GBP <span>00:00</span> */}
-            </div>
-            <div
-              className={`${style.borderL} ${style.cartPadding} alineContentCenter alineItemCenter  m-auto h-full`}
-            >
-              <img src={Forwardbtn} alt="downloadBtn" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="flex  mrtop1rem jcsb">
-        <div>
-          <img src="../../../logo2.png" alt="logo" />
-        </div>
-        <div className={` flex  gap3rem alineItemCenter ${style.pages}`}>
-          <div className={`${style.active}`}>Home</div>
-          <div> Browse Menu </div>
-          <div>Special Offers</div>
-          <div> Restaurants </div>
-          <div> Track Order</div>
-          <div className={`${style.userAuth}`}>
-            <img src={MaleUser} alt="" />
-            <p>Login/Signup</p>{" "}
-          </div>
-        </div>
-      </div>
+      <Header/>
       <div className={`${style.part2} mrtop1rem`}>
         <div className={`${style.part2left}`}>
           <div>
@@ -286,56 +241,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className={`${style.gridContainer}`}>
-        <div className={`${style.menuOptionsDiv1}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={Macd} alt="Mac'd" />
-          </div>
-          <div className={`${style.restaurantName}`}>
-            <h4>McDonald’s London </h4>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv1}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={papaJohns} alt="papaJohns" />
-          </div>
-          <div className={`${style.restaurantName}`}>
-            <h4>Papa Johns</h4>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv1}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={Kfc} alt="Mac'd" />
-          </div>
-          <div className={`${style.restaurantName}`}>
-            <h4>KFC West London</h4>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv1}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={Texas} alt="Mac'd" />
-          </div>
-          <div className={`${style.restaurantName}`}>
-            <h4>Texas Chicken</h4>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv1}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={BurgerKing} alt="Mac'd" />
-          </div>
-          <div className={`${style.restaurantName}`}>
-            <h4>Burger King</h4>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv1}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={Shaurma} alt="Mac'd" />
-          </div>
-          <div className={`${style.restaurantName}`}>
-            <h4>Shaurma 1</h4>
-          </div>
-        </div>
-      </div>
+      <Restaurants />
       <div className="mrtop1rem">
         <img className="w-full" src={OrderPng} alt="" />
       </div>
@@ -362,7 +268,7 @@ function Home() {
         <div className={`${style.AboutUsSubDiv}`}>
           <div className={`${style.AboutUsLeftSubDiv}`}>
             <div>
-              <p className={`${style.active}`}>ow does Order.UK work?</p>
+              <p className={`${style.active}`}>How does Order.UK work?</p>
               <p>What payment methods are accepted?</p>
               <p>Can I track my order in real-time?</p>
               <p>
@@ -372,7 +278,7 @@ function Home() {
             </div>
           </div>
           <div className={`${style.AboutUsRightSubDiv}`}>
-            <div className="flex">
+            <div className={`${style.AboutUsLeftSubDivGrid}`}>
               <div className={`${style.OrderFoodContainer}`}>
                 <div>
                   <h5>Place an Order!</h5>
@@ -383,7 +289,7 @@ function Home() {
                       alt=""
                     />
                   </div>
-                  <p> Place order through our website or Mobile app</p>
+                  <p className="font14px" > Place order through our website or Mobile app</p>
                 </div>
               </div>
               <div className={`${style.OrderFoodContainer}`}>
@@ -392,7 +298,7 @@ function Home() {
                   <div>
                     <img className={`${style.foodIcon}`} src={Food} alt="" />
                   </div>
-                  <p> Your can track your order status with delivery time</p>
+                  <p className="font14px"> Your can track your order status with delivery time</p>
                 </div>
               </div>
               <div className={`${style.OrderFoodContainer}`}>
@@ -401,7 +307,7 @@ function Home() {
                   <div>
                     <img className={`${style.foodIcon}`} src={Order} alt="" />
                   </div>
-                  <p> Receive your order at a lighting fast speed!</p>
+                  <p className="font14px"> Receive your order at a lighting fast speed!</p>
                 </div>
               </div>
             </div>
@@ -414,25 +320,23 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className={`${style.statics}`} >
-        <div className={`${style.staticsSubDiv}`} >
-          <p className={`${style.staticsSubDivText1}`} >546+</p>
+      <div className={`${style.statics}`}>
+        <div className={`${style.staticsSubDiv}`}>
+          <p className={`${style.staticsSubDivText1}`}>546+</p>
           <p className={`${style.staticsSubDivText2}`}>Registered Riders</p>
         </div>
-        <div className={`${style.staticsSubDiv}`} >
-          <p className={`${style.staticsSubDivText1}`} >789,900+</p>
+        <div className={`${style.staticsSubDiv}`}>
+          <p className={`${style.staticsSubDivText1}`}>789,900+</p>
           <p className={`${style.staticsSubDivText2}`}>Orders Delivered</p>
         </div>
-        <div className={`${style.staticsSubDiv}`} >
-          <p className={`${style.staticsSubDivText1}`} >690+</p>
+        <div className={`${style.staticsSubDiv}`}>
+          <p className={`${style.staticsSubDivText1}`}>690+</p>
           <p className={`${style.staticsSubDivText2}`}>Restaurants Partnered</p>
         </div>
-        <div className={`${style.staticsSubDiv}`} >
-          <p className={`${style.staticsSubDivText1}`} >17,457+</p>
+        <div className={`${style.staticsSubDiv}`}>
+          <p className={`${style.staticsSubDivText1}`}>17,457+</p>
           <p className={`${style.staticsSubDivText2}`}>Food items</p>
         </div>
-        
-        
       </div>
     </div>
   );

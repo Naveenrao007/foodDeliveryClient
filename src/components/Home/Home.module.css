@@ -63,7 +63,7 @@
 .active {
   background-color: var(--text-yellow-color);
   color: #ffffff !important;
-  padding: 0.2rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 20px;
 }
 .hometoprightdiv {
@@ -434,23 +434,23 @@
   margin-top: 1rem;
   font-family: var(--poppins);
 }
-.AboutUsLeftSubDiv {
+.AboutUsLeftSubDiv  {
   width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   text-align: center;
-  gap: 1rem;
-  font-size: 18px;
+justify-content: space-between;
+  
   font-weight: 700;
   line-height: 27px;
 }
 .AboutUsLeftSubDiv > div {
-  width: 70%;
+  width: 80%;
   margin: 0px auto;
-  font-size: 20px;
+  font-size: 16px;
+  line-height: 27px;
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   align-items: center;
   flex-direction: column;
 }
@@ -458,6 +458,13 @@
 .AboutUsRightSubDiv {
   width: 60%;
 }
+
+.AboutUsLeftSubDivGrid{
+  display: grid ;
+  grid-template-columns: repeat(3, minmax(150px, auto));
+ width: 100%;
+}
+  
 
 .OrderFoodContainer {
   display: flex;
@@ -470,21 +477,21 @@
 .OrderFoodContainer > div {
   background-color: rgba(217, 217, 217, 1);
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.style.foodIcon {
+.foodIcon {
   width: 4rem;
   height: 4rem;
 }
 .OrderFoodText {
-  width: 80%;
+  width: 90%;
   text-align: center;
   margin: 0px auto;
-  font-size: 15px;
+  /* font-size: 20px; */
   color: rgba(3, 8, 31, 1);
 }
 

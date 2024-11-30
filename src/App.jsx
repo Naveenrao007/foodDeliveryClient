@@ -1,12 +1,31 @@
 import { useState } from "react";
-import Footer from "./assets/components/footer/Footer";
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./Common.css";
-import SignIn from "./assets/components/signin/SignIn";
-import Home from "./assets/components/Home/Home";
+import { allFiles } from "./components";
+
 function App() {
+  const { Header, Footer, SignIn, SignUp, Home, Restaurants, Product } =
+    allFiles;
   return (
-    <div>
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/Signup" element={<SignUp />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Product />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  );
+}
+
+export default App;
+
+{
+  /* <div>
       <BrowserRouter>
         <Routes>
           <Route path="/signin" element={<SignIn />} />
@@ -14,8 +33,5 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Footer />
-    </div>
-  );
+    </div> */
 }
-
-export default App;

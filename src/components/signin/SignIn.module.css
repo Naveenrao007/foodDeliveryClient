@@ -37,7 +37,7 @@
   align-items: center;
 }
 .SignInMainImg > img {
-  width: 50%;
+  width: 30%;
 }
 
 .formcontainer {
@@ -153,6 +153,17 @@
   }
   .formInput,.formBtn , .formBtnGoggle{
     padding: 0.8rem;
+
+  }
+}
+.singupfont{
+  margin-left: 0.5rem;
+  font-size: 16px;
+}
+@media (max-width:400){
+  .singupfont{
+    font-size: 14px;
+ 
 
   }
 }

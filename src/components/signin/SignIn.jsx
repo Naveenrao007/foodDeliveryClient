@@ -1,8 +1,11 @@
 import React from "react";
 import SignInImage from "../../assets/images/SignInPage.png";
 import style from "./SignIn.module.css";
-import GooglePng from "../../../assets/assets/icons/Google.png";
+import GooglePng from "../../assets/icons/Google.png";
+import { useNavigate } from "react-router-dom";
+
 function SignIn() {
+  const navigate = useNavigate();
   return (
     <div className={`${style.SignInContainer}`}>
       <section className={`${style.leftSection}`}>
@@ -11,7 +14,7 @@ function SignIn() {
             <img src="../../../logo2.png" alt="logo" />
           </div>
           <div className="mrtop1rem">
-            <p className={`font32px fw600`}>Welcome Back 👋</p>
+            <p className={`font24px fw600`}>Welcome Back 👋</p>
           </div>
           <div className={`${style.SignInMsg} `}>
             Today is a new day. It's your day. You shape it. <br />
@@ -55,7 +58,13 @@ function SignIn() {
             </div>
             <div className="mrtop1rem texalignC">
               Don't you have an account?
-              <span className={`textyellow cp`}> Sign up</span>
+              <span
+                className={`textyellow cp mrlefthalfrem  `}
+                onClick={() => navigate("/signup")}
+              >
+                {" "}
+                Sign up
+              </span>
             </div>
           </div>
         </div>

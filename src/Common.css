@@ -54,7 +54,7 @@ head {
 .textyellow {
   color: var(--text-yellow-color);
 }
-.underline{
+.underline {
   text-decoration: underline;
 }
 .flex {
@@ -77,13 +77,13 @@ head {
 .jcc {
   justify-content: center;
 }
-.jcfe{
+.jcfe {
   justify-content: flex-end;
 }
 .alineItemCenter {
   align-items: center;
 }
-.alineContentCenter{
+.alineContentCenter {
   align-content: center;
 }
 .texalignS {
@@ -100,10 +100,18 @@ head {
 .cp {
   cursor: pointer;
 }
-.gaphalfrem{gap: 0.5rem;}
-.gap1rem{gap: 1rem;}
-.gap2rem{gap: 2rem;}
-.gap3rem{gap: 3rem;}
+.gaphalfrem {
+  gap: 0.5rem;
+}
+.gap1rem {
+  gap: 1rem;
+}
+.gap2rem {
+  gap: 2rem;
+}
+.gap3rem {
+  gap: 3rem;
+}
 .font10px {
   font-size: 10px;
 }
@@ -154,6 +162,21 @@ head {
 }
 .font38px {
   font-size: 38px;
+}
+.font40px {
+  font-size: 40px;
+}
+.font44px {
+  font-size: 44px;
+}
+.font48px {
+  font-size: 48px;
+}
+.font50px {
+  font-size: 50px;
+}
+.font54px {
+  font-size: 54px;
 }
 .fw400 {
   font-weight: 400;
@@ -213,22 +236,34 @@ head {
 .mrtop2rem {
   margin-top: 2rem;
 }
-.mrleft1rem{
+.mrleft1rem {
   margin-left: 1rem;
 }
+.mrlefthalfrem {
+  margin-left: 0.5rem;
+}
 
-.h-full{
+.h-full {
   height: 100%;
 }
-.w-full{
-  width:  100%;
+.w-full {
+  width: 100%;
 }
-.w-half{
+.w-half {
   width: 50%;
 }
-.m-auto{
+.width80per{
+  width: 80%;
+}
+.width60per {
+  width: 60%;
+}
+.width40per {
+  width: 40%;
+}
+.m-auto {
   margin: 0px auto;
 }
-.pdr1rem{
+.pdr1rem {
   padding-right: 1rem;
 }
