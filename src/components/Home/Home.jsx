@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import style from "./Home.module.css";
 import Star from "../../assets/icons/star.png";
 import Forwardbtn from "../../assets/icons/forwardbtn.png";
@@ -33,12 +33,39 @@ import OrderFood from "../../assets/images/order-food1.png";
 import Header from "../Header/Header";
 import Restaurants from "../Restaurants/Restaurants";
 import { useNavigate } from "react-router-dom";
- 
+import Loading from "../Loading/Loading";
+import { home } from "../../services/home";
+import { Context } from "../context/Context";
 function Home() {
+  const [resData, setresData] = useState(null)
+  const { setData, data } = useContext(Context);
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = useState(true);
+  const fetchData = async () => {
+    try {
+      const res = await home()
+      if (res.status == 200) {
+        console.log('Data received:', res.data);
+        setData(res.data)
+        setIsLoading(false)
+      } else {
+        console.error("Error ", res.status);
+
+      }
+
+    } catch (error) {
+      console.error('API call failed with error:', error);
+
+    }
+
+  }
+  useEffect(() => {
+    fetchData()
+
+  }, [setIsLoading, setData])
   return (
-    <div className={`${style.homeContainer}`}>
-      <Header/>
+    isLoading ? (<Loading />) : <div className={`${style.homeContainer}`}>
+      <Header  />
       <div className={`${style.part2} mrtop1rem`}>
         <div className={`${style.part2left}`}>
           <div>

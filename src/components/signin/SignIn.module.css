@@ -9,6 +9,11 @@
   display: flex;
   font-family: var(--poppins);
 }
+.errorText {
+  color: red;
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
 .leftSection {
   width: 50%;
   padding: 0.5rem 1rem;

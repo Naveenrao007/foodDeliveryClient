@@ -1,11 +1,84 @@
-import React from "react";
+import React, { useState } from "react";
 import SignInImage from "../../assets/images/SignInPage.png";
 import style from "./SignUp.module.css";
-import GooglePng from "../../assets/icons/Google.png"
+import GooglePng from "../../assets/icons/Google.png";
 import { useNavigate } from "react-router-dom";
+import { register } from "../../services/user";
 
+import {  toast,  } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function SignUp() {
   const navigate = useNavigate();
+
+
+  const [data, setData] = useState({
+    name: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    if (!data.name) newErrors.name = "Name is required.";
+    if (!data.phoneNumber || !/^\+?\d{10,15}$/.test(data.phoneNumber)) {
+      newErrors.phoneNumber = "Enter a valid phone number.";
+    }
+    if (!data.email || !/\S+@\S+\.\S+/.test(data.email)) {
+      newErrors.email = "Enter a valid email address.";
+    }
+    if (!data.password || data.password.length < 8) {
+      newErrors.password = "Password must be at least 8 characters.";
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+
+  const handleSubmit = async () => {
+    if (validate()) {
+      console.log("Form Data:", data);
+      const response = await register(data);
+      console.log(response);
+      // 
+      if (response.status === 400) {
+        toast.error(response.error.message, {
+          autoClose: 1400,
+
+        });
+        setTimeout(() => {
+          window.location.href = "/login";
+        }, 1900);
+      } else if (response.status === 201) {
+        toast.success(response.data.message, {
+          autoClose: 2000,
+
+        });
+        setTimeout(() => {
+          navigate("/login");
+        }, 2100);
+      } else if (response.status === 500) {
+        toast.error("Internal server error", {
+
+          autoClose: 5000,
+
+        });
+      } else if (response.status === 404) {
+        toast.error("Url is incorrect", {
+          autoClose: 5000,
+
+        });
+      }
+    }
+  };
 
   return (
     <div className={`${style.SignInContainer}`}>
@@ -29,7 +102,10 @@ function SignUp() {
                 type="text"
                 name="name"
                 placeholder="Naveen"
+                value={data.name}
+                onChange={handleChange}
               />
+              {errors.name && <p className={`${style.errorText}`}>{errors.name}</p>}
             </div>
             <div className="mrtop1rem">
               <p className={`${style.formSingInlabel}`}>Phone Number</p>
@@ -38,32 +114,48 @@ function SignUp() {
                 type="text"
                 name="phoneNumber"
                 placeholder="+91-9850085520"
+                value={data.phoneNumber}
+                onChange={handleChange}
               />
+              {errors.phoneNumber && (
+                <p className={`${style.errorText}`}>{errors.phoneNumber}</p>
+              )}
             </div>
             <div className="mrtop1rem">
               <p className={`${style.formSingInlabel}`}>Email</p>
               <input
                 className={`${style.formInput}`}
                 type="text"
-                name=""
+                name="email"
                 placeholder="Example@gmail.com"
-                id=""
+                value={data.email}
+                onChange={handleChange}
               />
+              {errors.email && <p className={`${style.errorText}`}>{errors.email}</p>}
             </div>
             <div className="mrtophalfrem">
               <p className={`${style.formSingInlabel}`}>Password</p>
               <input
                 className={`${style.formInput}`}
-                type="text"
+                type="password"
+                name="password"
                 placeholder="At least 8 characters"
-                name=""
-                id=""
+                value={data.password}
+                onChange={handleChange}
               />
+              {errors.password && (
+                <p className={`${style.errorText}`}>{errors.password}</p>
+              )}
             </div>
-            <div className={`textyellow mrtop1rem  texalignEnd cp`}>
+            <div className={`textyellow mrtop1rem texalignEnd cp`}>
               Forgot Password?
             </div>
-            <button className={`${style.formBtn} mrtop1rem cp`}>Sign in</button>
+            <button
+              className={`${style.formBtn} mrtop1rem cp`}
+              onClick={handleSubmit}
+            >
+              Sign in
+            </button>
             <div>
               <div className={`${style.divideLineContainer}`}>
                 <p></p> Or <p></p>
@@ -71,7 +163,7 @@ function SignUp() {
               <div className="flex">
                 <button className={`${style.formBtnGoggle} mrtop1rem cp`}>
                   <img src={GooglePng} alt="" />
-                  Sign in with Google{" "}
+                  Sign in with Google
                 </button>
               </div>
             </div>
@@ -79,7 +171,7 @@ function SignUp() {
               Already have an account?
               <span
                 className={`textyellow cp mrlefthalfrem`}
-                onClick={() => navigate("/signin")}
+                onClick={() => navigate("/login")}
               >
                 Sign in
               </span>

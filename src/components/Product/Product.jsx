@@ -12,6 +12,8 @@ import IdVerified from "../../assets/icons/IdVerified.png"
 import CLock2 from "../../assets/icons/Clock2.png"
 import Cart from "./Cart/Cart";
 import Carousel from "../Carousel/Carousel";
+import LibMap from "../LibMap/LibMap";
+import Restaurants from "../Restaurants/Restaurants";
 function Product() {
   return (
     <div className={`${style.productPageContainer}`}>
@@ -159,8 +161,15 @@ function Product() {
 
         </div>
       </div>
+      <div className={`${style.libMapContainer}`}>
+        <LibMap/>
+      </div>
+
     <div>
       <Carousel/>
+    </div>
+    <div className={style.RestaurantsContainer}>
+      <Restaurants/>
     </div>
     </div>
   );

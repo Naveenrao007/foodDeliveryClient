@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import style from "./Header.module.css";
 import Star from "../../assets/icons/star.png";
@@ -6,8 +6,13 @@ import Forwardbtn from "../../assets/icons/forwardbtn.png";
 import ShoppingBasket from "../../assets/icons/shoppingBasket.png";
 import Location from "../../assets/icons/Location.png";
 import MaleUser from "../../assets/icons/maleUser.png";
-
+import { Context } from "../context/Context"
 function Header() {
+  const { data } = useContext(Context)
+  console.log("headerdata", data.user.name);
+
+
+
   const navigate = useNavigate()
   return (
     <div>
@@ -82,7 +87,10 @@ function Header() {
           </NavLink>
           <div className={`${style.userAuth}`}   >
             <img src={MaleUser} alt="maleUser" />
-            <p className="cp" onClick={() => { navigate("/signin") }} >Login/Signup</p>
+            {
+              data.user.name ? <p> Hey {data.user.name} </p> : <p className="cp" onClick={() => { navigate("/login") }} >Login/Signup</p>
+            }
+
           </div>
         </div>
       </div>
