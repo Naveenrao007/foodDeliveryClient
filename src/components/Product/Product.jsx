@@ -19,7 +19,7 @@ function Product() {
   return (
     <div className={`${style.productPageContainer}`}>
       <div className="mrCommon mrtop1rem ">
-        <Header classTitle="margin2rem" />
+        <Header />
       </div>
       <div className={`${style.burgertopdiv} mrCommon`}>
         <div className={`${style.borderTopleftdiv}`}>

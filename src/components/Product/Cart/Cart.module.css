@@ -42,10 +42,9 @@
 .responsiveImage:hover {
   transform: scale(1.05);
 }
-.cardRightContainer{
+.cardRightContainer {
   width: 30%;
-  margin-top: 2rem ;
-  
+  margin-top: 2rem;
 }
 .shareContainer {
   background-color: var(--text-yellow-color);
@@ -64,17 +63,15 @@
   padding: 0.4rem 0.3rem;
   margin-left: 0.5rem;
   border-radius: 20px;
-
-
 }
-.cardDetailsMainDiv{
+.cardDetailsMainDiv {
   border: 1px solid rgba(0, 0, 0, 0.11);
   background-color: rgba(249, 249, 249, 1);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
 }
-.cardDetailsShoppingBasket{
+.cardDetailsShoppingBasket {
   background-color: rgba(2, 134, 67, 1);
   color: var(--text-white);
   display: flex;
@@ -83,20 +80,150 @@
   padding: 1rem;
   border-radius: 8px 8px 0px 0px;
 }
-.cardDetailsShoppingBasket >P{
+.cardDetailsShoppingBasket > P {
   font-size: 32px;
   font-weight: 600;
 }
-.addedItemContainer{
+.addedItemContainer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-around;
 }
-/* Breakpoints for responsive design */
+.cartItem {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 4fr 1fr;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+
+  gap: 10px;
+  padding: 0.3rem;
+}
+.cartItem > div {
+  display: flex;
+  align-items: start;
+}
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+}
+.foodQty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.foodQty > p {
+  background-color: var(--text-yellow-color);
+  padding: 0.5rem;
+  color: var(--text-white);
+  font-weight: 600;
+  border-radius: 50%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+}
+.foodPrice {
+  color: rgba(2, 134, 67, 1);
+  font-size: 20px;
+  font-weight: 600;
+}
+.foodName {
+  color: rgba(3, 8, 31, 1);
+  font-size: 16px;
+  font-weight: 500;
+}
+.foodIng {
+  color: rgba(0, 0, 0, 1);
+  font-size: 14px;
+  font-weight: 400;
+}
+.totalAmt {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+  display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+.totalAmt > div {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.couponContainer {
+  width: 90%;
+}
+.AmtToPay {
+  width: 100%;
+  display: flex;
+  background-color: var(--text-yellow-color);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  color: var(--text-white);
+}
+.AmtToPay > h3 {
+  font-size: 30px;
+}
+.AmtToPay > p {
+  font-size: 18px;
+}
+.couponOpt{
+  display: flex;
+  border: 1px solid rgba(207, 207, 207, 1);
+  border-radius: 30px;
+  justify-content: space-around;
+  padding: 0.3rem 0rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
+.deliveryMainContainer{
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
+}
+.deliveryContainer{
+display: flex;
+padding: 1rem;
+}
+.DeliveryScooterDiv{
+  text-align: center;
+  background-color: rgba(238, 238, 238, 1);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+ 
+}
+.middleBorder{
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin: 0rem 0.5rem;
+}
+.DeliveryCollectionDiv{
+  text-align: center;
+  padding: 0.5rem;
+  opacity: 0.5;
+ 
+}
+.CheckOutDiv{
+  background-color: rgba(2, 134, 67, 1);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-white);
+  display: flex;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 90%;
+  margin: 15px auto;
+  gap: 2rem;
+}
 @media (max-width: 1024px) {
   .part4 > div,
   .itemContainer > * {
-    flex: 1 1 calc(50% - 1rem); /* Each item takes ~50% of the width */
+    flex: 1 1 calc(50% - 1rem);
     max-width: calc(50% - 1rem);
   }
 }

@@ -301,3 +301,11 @@ head {
   height: 20px;
 }
 
+.borderBtm {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+
+}
+.bordertop {
+  border-top: 1px solid rgba(0, 0, 0, 0.11);
+
+}

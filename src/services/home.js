@@ -22,4 +22,26 @@ const home = async () => {
     }
 
 }
- export   {home}
+
+const restaurants = async () => {
+    const headers = addTokenToHeader({ headers: {} });
+
+    try {
+        const response = await axios.get(`${import.meta.env.VITE_BaseUrl}/dashboard/restaurants`, {
+            headers
+        })
+        console.log(response.data);
+        return {
+            data: response.data,
+            status: response.status
+        };
+    } catch (error) {
+        return {
+            error: error.response ? error.response.data : "Internal server error",
+            status: error.response ? error.response.status : 500
+        };
+
+    }
+
+}
+ export   {home,restaurants}

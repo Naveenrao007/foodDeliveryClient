@@ -1,11 +1,10 @@
 import React from "react";
 import style from "./Item.module.css";
-import PlusSign from "../../../../assets/icons/Plus.png"
-import { Handler } from "leaflet";
+import PlusSign from "../../../../assets/icons/Plus.png";
 
-function Item({ title, description, price, image,id ,handleAddCartItem}) {
+function Item({ title, description, price, image, id, handleAddCartItem }) {
   return (
-    <div className={`${style.ItemContaier}` } key={id}>
+    <div className={`${style.ItemContaier}`} key={id}>
       <div className={`${style.itemLeft}`}>
         <h3>{title}</h3>
         <p>{description}</p>
@@ -15,8 +14,8 @@ function Item({ title, description, price, image,id ,handleAddCartItem}) {
         <img src={`data:image/png;base64,${image}`} alt={title} />
       </div>
       <div>
-        <div className={`${style.PlusSignContainer}`}  onClick={handleAddCartItem} >
-            <img src={PlusSign} alt="" />
+        <div className={`${style.PlusSignContainer}`} onClick={() => handleAddCartItem(id)}>
+          <img src={PlusSign} alt="Add to Cart" />
         </div>
       </div>
     </div>
