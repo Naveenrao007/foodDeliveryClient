@@ -1,62 +1,110 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--poppins);
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--poppins);
+}
+
+/* Container styles */
+.part4,
+.itemContainer {
+  display: flex;
+  flex-wrap: wrap; /* Enable wrapping when space is insufficient */
+  gap: 1rem;
+  /* justify-content: space-between; */
+  margin-top: 2rem; /* Common margin for both */
+}
+
+/* Common styles for child items */
+.part4 > div,
+.itemContainer > * {
+  flex: 1 1 calc(33% - 1rem); /* Each item takes ~33% of the width */
+  max-width: calc(33% - 1rem); /* Prevent items from exceeding this width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Image styles */
+.responsiveImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.Sections {
+  margin: 1rem 0rem;
+  font-size: 36px;
+  font-weight: 600;
+}
+.responsiveImage:hover {
+  transform: scale(1.05);
+}
+.cardRightContainer{
+  width: 30%;
+  margin-top: 2rem ;
   
-  /* Container styles */
-  .part4,
-  .itemContainer {
-    display: flex;
-    flex-wrap: wrap; /* Enable wrapping when space is insufficient */
-    gap: 1rem;
-    justify-content: space-between;
-    margin-top: 2rem; /* Common margin for both */
-  }
-  
-  /* Common styles for child items */
+}
+.shareContainer {
+  background-color: var(--text-yellow-color);
+  display: grid;
+  align-items: center;
+  grid-template-columns: 20% 50% 30%;
+  padding: 1rem;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+.shareContainer > button {
+  color: var(--text-yellow-color);
+  background-color: white;
+  border: none;
+  padding: 0.4rem 0.3rem;
+  margin-left: 0.5rem;
+  border-radius: 20px;
+
+
+}
+.cardDetailsMainDiv{
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  background-color: rgba(249, 249, 249, 1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.cardDetailsShoppingBasket{
+  background-color: rgba(2, 134, 67, 1);
+  color: var(--text-white);
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  border-radius: 8px 8px 0px 0px;
+}
+.cardDetailsShoppingBasket >P{
+  font-size: 32px;
+  font-weight: 600;
+}
+.addedItemContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* Breakpoints for responsive design */
+@media (max-width: 1024px) {
   .part4 > div,
   .itemContainer > * {
-    flex: 1 1 calc(33% - 1rem); /* Each item takes ~33% of the width */
-    max-width: calc(33% - 1rem); /* Prevent items from exceeding this width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    flex: 1 1 calc(50% - 1rem); /* Each item takes ~50% of the width */
+    max-width: calc(50% - 1rem);
   }
-  
-  /* Image styles */
-  .responsiveImage {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    transition: transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .part4 > div,
+  .itemContainer > * {
+    flex: 1 1 calc(100% - 1rem); /* Each item takes full width */
+    max-width: calc(100% - 1rem);
   }
-  
-  .Sections{
-    margin: 1rem 0rem ;
-    font-size: 36px;
-    font-weight: 600;
-  }
-  .responsiveImage:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Breakpoints for responsive design */
-  @media (max-width: 1024px) {
-    .part4 > div,
-    .itemContainer > * {
-      flex: 1 1 calc(50% - 1rem); /* Each item takes ~50% of the width */
-      max-width: calc(50% - 1rem);
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .part4 > div,
-    .itemContainer > * {
-      flex: 1 1 calc(100% - 1rem); /* Each item takes full width */
-      max-width: calc(100% - 1rem);
-    }
-  }
-  
+}

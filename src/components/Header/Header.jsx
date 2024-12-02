@@ -6,10 +6,10 @@ import Forwardbtn from "../../assets/icons/forwardbtn.png";
 import ShoppingBasket from "../../assets/icons/shoppingBasket.png";
 import Location from "../../assets/icons/Location.png";
 import MaleUser from "../../assets/icons/maleUser.png";
-import { Context } from "../context/Context"
-function Header() {
-  const { data } = useContext(Context)
-  console.log("headerdata", data.user.name);
+import { MyContext } from "../../context/Context"
+function Header({classTitle}) {
+  const { data } = useContext(MyContext)
+  
 
 
 
@@ -50,7 +50,7 @@ function Header() {
           </div>
         </div>
       </div>
-      <div className="flex mrtop1rem jcsb">
+      <div className={`${classTitle} flex jcsb mrtop1rem`} >
         <div>
           <img src="../../../logo2.png" alt="logo" />
         </div>
@@ -88,7 +88,7 @@ function Header() {
           <div className={`${style.userAuth}`}   >
             <img src={MaleUser} alt="maleUser" />
             {
-              data.user.name ? <p> Hey {data.user.name} </p> : <p className="cp" onClick={() => { navigate("/login") }} >Login/Signup</p>
+              data?.user?.name ? <p className="cp" onClick={() => { navigate("/profile") }}>   Hey {data.user.name} </p> : <p className="cp" onClick={() => { navigate("/login") }} >Login/Signup</p>
             }
 
           </div>

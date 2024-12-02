@@ -38,6 +38,25 @@ const login = async (data) => {
         };
     }
 };
+const getUser = async () => {
+    const headers = addTokenToHeader({ headers: {} });
+    try {
+        const res = await axios.get(`${import.meta.env.VITE_BaseUrl}/user/profile`, {
+            headers
+        });
+
+        return {
+            data: res.data,
+            status: res.status
+        };
+
+    } catch (error) {
+        return {
+            error: error.response ? error.response.data : "Internal server error",
+            status: error.response ? error.response.status : 500
+        };
+    }
+}
 const updateUser = async (data) => {
     const headers = addTokenToHeader({ headers: {} });
 
@@ -58,4 +77,28 @@ const updateUser = async (data) => {
         };
     }
 };
-export { register, login, updateUser };
+
+const addUpdateCard = async (data) => {
+    console.log(data);
+    const headers = addTokenToHeader({ headers: {} });
+
+    try {
+        const res = await axios.put(`${import.meta.env.VITE_BaseUrl}/user/addupdatecard`, data, {
+            headers
+        });
+
+        return {
+            data: res.data,
+            status: res.status
+        };
+
+    } catch (error) {
+        console.error("Error in registration:", error);
+        return {
+            error: error.response ? error.response.data : "Internal server error",
+            status: error.response ? error.response.status : 500
+        };
+    }
+};
+
+export { register,getUser, login, updateUser,addUpdateCard };

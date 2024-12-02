@@ -15,10 +15,11 @@ import Carousel from "../Carousel/Carousel";
 import LibMap from "../LibMap/LibMap";
 import Restaurants from "../Restaurants/Restaurants";
 function Product() {
+
   return (
     <div className={`${style.productPageContainer}`}>
       <div className="mrCommon mrtop1rem ">
-        <Header />
+        <Header classTitle="margin2rem" />
       </div>
       <div className={`${style.burgertopdiv} mrCommon`}>
         <div className={`${style.borderTopleftdiv}`}>
@@ -127,7 +128,7 @@ function Product() {
             </p>
             <h4 className="mrtop1rem">            Website
             </h4>
-           <p  className="mrtop1rem"> http://mcdonalds.uk/</p>
+            <p className="mrtop1rem"> http://mcdonalds.uk/</p>
           </div>
 
         </div>
@@ -162,15 +163,15 @@ function Product() {
         </div>
       </div>
       <div className={`${style.libMapContainer}`}>
-        <LibMap/>
+        <LibMap />
       </div>
 
-    <div>
-      <Carousel/>
-    </div>
-    <div className={style.RestaurantsContainer}>
-      <Restaurants/>
-    </div>
+      <div>
+        <Carousel />
+      </div>
+      <div className={style.RestaurantsContainer}>
+        <Restaurants />
+      </div>
     </div>
   );
 }

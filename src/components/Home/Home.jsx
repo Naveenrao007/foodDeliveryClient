@@ -35,37 +35,39 @@ import Restaurants from "../Restaurants/Restaurants";
 import { useNavigate } from "react-router-dom";
 import Loading from "../Loading/Loading";
 import { home } from "../../services/home";
-import { Context } from "../context/Context";
+import { MyContext } from "../../context/Context";
 function Home() {
-  const [resData, setresData] = useState(null)
-  const { setData, data } = useContext(Context);
+
+  const { data, setData } = useContext(MyContext);
+  const [categoryData, setcategoryData] = useState(null)
   const navigate = useNavigate()
   const [isLoading, setIsLoading] = useState(true);
   const fetchData = async () => {
     try {
       const res = await home()
       if (res.status == 200) {
-        console.log('Data received:', res.data);
         setData(res.data)
+        setcategoryData(res.data.popularCategory)
         setIsLoading(false)
       } else {
         console.error("Error ", res.status);
-
+        navigate("/login")
       }
 
     } catch (error) {
       console.error('API call failed with error:', error);
-
+      navigate("/login")
     }
 
   }
+
   useEffect(() => {
     fetchData()
 
-  }, [setIsLoading, setData])
+  }, [])
   return (
     isLoading ? (<Loading />) : <div className={`${style.homeContainer}`}>
-      <Header  />
+      <Header />
       <div className={`${style.part2} mrtop1rem`}>
         <div className={`${style.part2left}`}>
           <div>
@@ -212,61 +214,21 @@ function Home() {
       <div className={`${style.part3Text1}`}>
         Order.uk Popular Categories 🤩
       </div>
+
       <div className={style.gridContainer}>
-        <div className={`${style.menuOptionsDiv}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={MenuImg6} alt="MenuImg6" />
-          </div>
-          <div className={`${style.menuName}`}>
-            <h4>Burgers & Fast food</h4>
-            <p className={`textyellow font13px `}>21 Restaurants</p>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={MenuImg1} alt="MenuImg1" />
-          </div>
-          <div className={`${style.menuName}`}>
-            <h4>Salads</h4>
-            <p className={`textyellow font13px `}>32 Restaurants</p>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={MenuImg3} alt="MenuImg1" />
-          </div>
-          <div className={`${style.menuName}`}>
-            <h4>Pasta & Casuals</h4>
-            <p className={`textyellow font13px `}>11 Restaurants</p>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={MenuImg2} alt="MenuImg2" />
-          </div>
-          <div className={`${style.menuName}`}>
-            <h4>Pizza</h4>
-            <p className={`textyellow font13px `}>32 Restaurants</p>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={MenuImg5} alt="MenuImg5" />
-          </div>
-          <div className={`${style.menuName}`}>
-            <h4>Breakfast</h4>
-            <p className={`textyellow font13px `}>19 Restaurants</p>
-          </div>
-        </div>
-        <div className={`${style.menuOptionsDiv}`}>
-          <div className={`${style.menuNameImg}`}>
-            <img src={MenuImg4} alt="MenuImg1" />
-          </div>
-          <div className={`${style.menuName}`}>
-            <h4>Soups</h4>
-            <p className={`textyellow font13px `}>25 Restaurants</p>
-          </div>
-        </div>
+        {
+          categoryData?.map((item) => (
+            <div className={`${style.menuOptionsDiv}`} key={item.id}>
+              <div className={`${style.menuNameImg}`}>
+                <img src={`data:image/png;base64,${item.image}`} alt={item.name} />
+              </div>
+              <div className={`${style.menuName}`}>
+                <h4>{item.name}</h4>
+                <p className={`textyellow font13px`}>{item.restaurantCount} Restaurants</p>
+              </div>
+            </div>
+          ))
+        }
       </div>
       <Restaurants />
       <div className="mrtop1rem">

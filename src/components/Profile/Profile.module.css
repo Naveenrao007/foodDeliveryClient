@@ -1,0 +1,168 @@
+.marginTop {
+  margin-top: 2rem;
+}
+
+.profileContainer {
+  margin: 2rem;
+  padding: 1rem;
+  /* max-width: 800px; */
+}
+
+.profileSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.profilePhotoName {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  margin-bottom: 2rem;
+}
+.profilePhotoName > span {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+}
+
+.profileHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profileUserDiv {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.profileImg {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.editBtn {
+  background-color: var(--text-yellow-color);
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  font-size: 18px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  background-color: #e78c24;
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+}
+.formRow > div {
+  width: 50%;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.paymentMethods {
+  margin-top: 2rem;
+  /* display: flex; */
+}
+
+.paymentCard {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 1rem;
+  width: 25%;
+}
+.paymentCardNew {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 1rem;
+min-width:260px;
+width: 25%;
+}
+.paymentCardNew h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+.cardDetails p {
+  margin: 0;
+  font-size: 14px;
+  color: rgb(139, 135, 135);
+}
+.cardDetails h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+}
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.countryList {
+  max-height: 100px;
+  overflow-y: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: white;
+}
+
+.countryList li {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.countryList li:hover {
+  background-color: #007bff;
+  color: white;
+}
+.errorMessage {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}

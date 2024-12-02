@@ -45,6 +45,7 @@ function SignIn() {
         toast.error(response.error.message, {
           autoClose: 1400,
         });
+        
       } else if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         console.log(response.data);
@@ -52,6 +53,7 @@ function SignIn() {
         toast.success(response.data.message, { autoClose: 1200 });
         navigate("/");
       } else if (response.status === 500) {
+        
         toast.error("Internal server error");
       } else if (response.status === 404) {
         toast.error("Url is incorrect");

@@ -273,7 +273,10 @@ head {
 .pdr1rem {
   padding-right: 1rem;
 }
-
+.margin2rem {
+  width: 95%;
+  margin: 20px auto;
+}
 .star {
   display: inline-block;
   width: 50px;
@@ -297,3 +300,4 @@ head {
   width: 20px;
   height: 20px;
 }
+
