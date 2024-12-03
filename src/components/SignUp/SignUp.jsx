@@ -116,6 +116,7 @@ function SignUp() {
                 placeholder="+91-9850085520"
                 value={data.phoneNumber}
                 onChange={handleChange}
+                maxLength={10}
               />
               {errors.phoneNumber && (
                 <p className={`${style.errorText}`}>{errors.phoneNumber}</p>
