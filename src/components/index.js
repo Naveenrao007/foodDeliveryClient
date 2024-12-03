@@ -11,5 +11,6 @@ import Profile from "./Profile/Profile.jsx"
 import Checkout from "./checkout/Checkout.jsx"
 import Payment from "./payment/Payment.jsx"
 import Order from "./finalOrder/Order.jsx"
+import Address from "./address/Address.jsx"
 
- export const allFiles = {Home, SignIn, SignUp, Footer,Profile,Payment,Order ,Product,Cart,Checkout, Restaurants, Header, Carousel}
+export const allFiles = { Address, Home, SignIn, SignUp, Footer, Profile, Payment, Order, Product, Cart, Checkout, Restaurants, Header, Carousel }

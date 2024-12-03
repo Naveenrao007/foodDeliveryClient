@@ -100,5 +100,54 @@ const addUpdateCard = async (data) => {
         };
     }
 };
+const addUpdateaddress = async (data) => {
+    console.log(data);
+    const headers = addTokenToHeader({ headers: {} });
 
-export { register,getUser, login, updateUser,addUpdateCard };
+    try {
+        const res = await axios.put(`${import.meta.env.VITE_BaseUrl}/user/addupdateaddress`, data, {
+            headers
+        });
+
+        return {
+            data: res.data,
+            status: res.status
+        };
+
+    } catch (error) {
+        console.error("Error in registration:", error);
+        return {
+            error: error.response ? error.response.data : "Internal server error",
+            status: error.response ? error.response.status : 500
+        };
+    }
+};
+const removeAddress = async (address) => {
+    console.log("Removing address with ID:", address.addId);
+
+    
+    const addId = address.addId;
+    const headers = addTokenToHeader({ headers: {} });
+
+    try {
+        const res = await axios.delete(`${import.meta.env.VITE_BaseUrl}/user/deleteaddress/${addId}`, {
+            headers
+        });
+
+        console.log(res); 
+
+        return {
+            data: res.data,
+            status: res.status
+        };
+    } catch (error) {
+        console.error("Error removing address:", error);
+        return {
+            error: error.response ? error.response.data : "Internal server error",
+            status: error.response ? error.response.status : 500
+        };
+    }
+};
+
+
+export { register, getUser, login, updateUser, addUpdateCard, addUpdateaddress, removeAddress };

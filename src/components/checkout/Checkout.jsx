@@ -55,12 +55,12 @@ function Checkout() {
                         </div>
                     </div>
                     <div className={style.CheckoutRightDiv}>
-                        <div className={style.CheckoutRightDivDelivery}>
-                            <div className='flex alineItemCenter'>
+                        <div className={style.CheckoutRightDivDelivery} onClick={()=>navigate("/address")}>
+                            <div className='flex alineItemCenter' >
                                 <div className={style.CheckoutRightDivDeliveryImg}>
                                     <img src={DeliveryIcon} alt="DeliveryIcon" />
                                 </div>
-                                <div>
+                                <div >
                                     <h4 className={style.CheckoutItemName}>Delivery Address</h4>
                                     <p className={style.CheckoutItemCount}>45, Green Street, Sector 12...</p>
                                 </div>

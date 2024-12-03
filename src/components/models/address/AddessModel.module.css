@@ -1,0 +1,126 @@
+/* Modal Overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Content */
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px; /* Set a max width for the modal */
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Style */
+.addressForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between rows */
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Gap between label and input */
+}
+
+.formGroup label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Modal Actions */
+.modalActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalActions button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btnCancel {
+    background-color: #f4f4f4;
+    color: #333;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+.btnSave {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btnRemove {
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Desktop and Larger Screens */
+@media (min-width: 768px) {
+    .addressForm {
+        flex-direction: column;
+    }
+
+    .formRow {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px; /* Space between form groups */
+    }
+
+    .formGroup {
+        flex: 1; /* Each form group takes equal space */
+    }
+
+    /* Full Address takes full width on the second row */
+    .fullAddressGroup {
+        flex: 1 1 100%; /* Full Address will take the entire row */
+    }
+}
+
+/* Mobile Design */
+@media (max-width: 767px) {
+    .formRow {
+        flex-direction: column; /* Stack fields on top of each other */
+    }
+
+    .formGroup {
+        flex: 1 1 100%; /* Each field takes full width */
+    }
+}
+
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+      

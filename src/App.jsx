@@ -5,12 +5,11 @@ import { ToastContainer } from "react-toastify";
 import { MyProvider } from "./context/Context";
 import "./Common.css";
 import "leaflet/dist/leaflet.css";
-
 import { allFiles } from "./components";
 
 
 function App() {
-  const { Profile, Footer, SignIn, SignUp, Home, Product,Checkout ,Order , Payment} =
+  const { Address, Profile, Footer, SignIn, SignUp, Home, Product, Checkout, Order, Payment } =
     allFiles;
   return (
     <MyProvider>
@@ -26,6 +25,7 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/final" element={<Order />} />
+            <Route path="/address" element={<Address />} />
           </Routes>
         </main>
         <Footer />
