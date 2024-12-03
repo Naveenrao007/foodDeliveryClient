@@ -8,5 +8,8 @@ import Header from "./Header/Header.jsx"
 import Cart from "./Product/Cart/Cart.jsx"
 import Carousel from "./Carousel/Carousel.jsx"
 import Profile from "./Profile/Profile.jsx"
+import Checkout from "./checkout/Checkout.jsx"
+import Payment from "./payment/Payment.jsx"
+import Order from "./finalOrder/Order.jsx"
 
- export const allFiles = {Home, SignIn, SignUp, Footer,Profile ,Product,Cart, Restaurants, Header, Carousel}
+ export const allFiles = {Home, SignIn, SignUp, Footer,Profile,Payment,Order ,Product,Cart,Checkout, Restaurants, Header, Carousel}

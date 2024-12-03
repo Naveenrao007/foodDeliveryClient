@@ -30,7 +30,7 @@ const restaurants = async () => {
         const response = await axios.get(`${import.meta.env.VITE_BaseUrl}/dashboard/restaurants`, {
             headers
         })
-        console.log(response.data);
+       
         return {
             data: response.data,
             status: response.status

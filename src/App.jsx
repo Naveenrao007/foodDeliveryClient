@@ -8,8 +8,9 @@ import "leaflet/dist/leaflet.css";
 
 import { allFiles } from "./components";
 
+
 function App() {
-  const { Profile, Footer, SignIn, SignUp, Home, Product } =
+  const { Profile, Footer, SignIn, SignUp, Home, Product,Checkout ,Order , Payment} =
     allFiles;
   return (
     <MyProvider>
@@ -22,6 +23,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/final" element={<Order />} />
           </Routes>
         </main>
         <Footer />

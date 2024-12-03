@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--poppins);
+}
+.CheckoutContainer{
+margin: 0rem 2rem;
+}
+
+.profilePhotoName {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  .profilePhotoName > span {
+    width: 8%;
+    display: flex;
+    justify-content: center;
+  }
+  
+
+  .CheckoutleftDiv{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(3, 8, 31, 1);
+    border-radius: 12px;
+    padding: 1rem;
+    width: 58%;
+  }
+  .CheckoutRightDiv{
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid rgba(3, 8, 31, 1); */
+    border-radius: 12px;
+    padding: 1rem;
+    width: 38%;
+  }
+  
+  .CheckoutItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(32, 41, 56, 1);
+    margin-bottom: 0.5rem;
+    padding-top: 0.5rem;
+  }
+  .CheckoutItems > div{
+    display: flex;
+    
+
+  }
+  .CheckoutItemImg{
+    margin-right: 1rem;
+  }
+  .CheckoutItemImg >img{
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+  }
+
+  .CheckoutItemCount{
+ font-size: 16px;
+font-weight: 500;
+line-height: 24px;
+text-align: left;
+color: rgba(3, 8, 31, 1);
+/* margin-top: 0.2rem; */
+
+  }
+  .CheckoutItemCount{
+    color:  rgba(131, 133, 138, 1);
+    font-size: 12px;
+ 
+line-height: 19.2px;
+text-align: left;
+
+
+}
+.CheckoutItemPrice{
+  color:   rgba(2, 134, 67, 1);
+font-size: 14px;
+font-weight: 600;
+line-height: 25px;
+text-align: right;
+
+
+}
+  .CheckoutItemNotes > input{
+    border: 1px solid rgba(32, 41, 56, 1);
+    border-radius: 40px;
+  }
+
+  .CheckoutRightDivDelivery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(3, 8, 31, 1);
+    border-radius: 40px;
+    padding: 0rem 1rem 0rem 0rem;
+  }
+  .CheckoutRightDivDeliveryImg{
+    width: 50px;
+    /* height: 50px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .CheckoutRightDivDeliveryImg > img{
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+ .CheckoutItemDiscount{
+  margin: 0.5rem;
+  border-top: 1px solid rgba(32, 41, 56, 1);
+  color: rgba(131, 133, 138, 1);
+  padding-top: 0.5rem;
+ }
+ .CheckoutItemDiscount > div{
+    display: flex;
+    justify-content: space-between;
+ }
+ .finalPrice{
+    font-size: 20px;
+    color: rgba(0, 0, 0, 1);
+    font-weight: 700;
+ }
+ .CheckoutItemPaymentBtn{
+    width: 98%;
+    cursor: pointer;
+    margin: 20px auto;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 600;
+    font-size: 18px;
+    background-color: var(--text-yellow-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+ }

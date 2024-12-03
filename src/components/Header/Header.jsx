@@ -7,9 +7,9 @@ import ShoppingBasket from "../../assets/icons/shoppingBasket.png";
 import Location from "../../assets/icons/Location.png";
 import MaleUser from "../../assets/icons/maleUser.png";
 import { MyContext } from "../../context/Context"
-function Header({classTitle}) {
+function Header({ classTitle }) {
   const { data } = useContext(MyContext)
-  
+
 
 
 

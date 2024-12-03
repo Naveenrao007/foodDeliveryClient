@@ -30,7 +30,37 @@ const Cart = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [cartItem, setCartItem] = useState([]);
   const [foodOption, setFoodOption] = useState(null);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [shareableLink, setShareableLink] = useState("");
 
+  useEffect(() => {
+    const calculateTotal = () => {
+      const sum = cartItem.reduce((acc, item) => acc + item.count * item.price, 0);
+      setTotalPrice(sum);
+    };
+
+    calculateTotal();
+  }, [cartItem]);
+  const handleCheckout = () => {
+   
+    
+    navigate("/checkout", {
+      state: {
+        cartData: cartItem,
+        totalPrice,
+      },
+    });
+  };
+  
+  const generateShareableLink = () => {
+    const cartDetails = cartItem.map(
+      (item) => `${item.name} (${item.count} x ₹${item.price})`
+    );
+    const link = `Your Cart: ${cartDetails.join(", ")}. Total: ₹${totalPrice}`;
+    setShareableLink(link);
+    navigator.clipboard.writeText(link);
+    toast.success("Cart link copied to clipboard!");
+  };
   const fetchProduct = async () => {
     const res = await restaurants();
     if (res.status === 200) {
@@ -127,7 +157,7 @@ const Cart = () => {
                 <div className={`${style.shareContainer}`}>
                   <img src={Share} alt="Share" />
                   <p>Share this cart with your friends</p>
-                  <button>Copy Link</button>
+                  <button onClick={generateShareableLink}  >Copy Link</button>
                 </div>
                 <div className={`${style.cardDetailsMainDiv}`}>
                   <div className={`${style.cardDetailsShoppingBasket}`}>
@@ -155,21 +185,21 @@ const Cart = () => {
                     ))}
                     <div className={`${style.totalAmt} `} >
                       <div >
-                        <h4>Sub Total: </h4> <p>555</p>
+                        <h4>Sub Total: </h4> <p>₹ {totalPrice}</p>
                       </div>
                       <div >
-                        <h4>Discounts: </h4> <p>555</p>
+                        <h4>Discounts: </h4> <p>-₹5.00</p>
 
                       </div>
                       <div >
-                        <h4>Discounts:</h4> <p>555</p>
+                        <h4>Discounts:</h4> <p> ₹5.00</p>
 
                       </div>
                     </div>
                     <div className={`${style.couponContainer} `} >
                       <div className={style.AmtToPay} >
                         <p>Total to pay</p>
-                        <h3 >₹230.00</h3>
+                        <h3 >₹{totalPrice}.00</h3>
                       </div>
                       <div className={style.couponOpt} >
                         <p>Choose your free item..</p>
@@ -200,10 +230,16 @@ const Cart = () => {
                           </div>
                         </div>
                       </div>
-                      <div className={style.CheckOutDiv}>
-                        <img src={ForwardArrow} alt="" />
-                        <p>Checkout!</p>
-                      </div>
+                      {
+                        totalPrice > 500 ? <div className={style.CheckOutDiv} onClick={handleCheckout}>
+                          <img src={ForwardArrow} alt="" />
+                          <p>Checkout!</p>
+                        </div> : <div className={style.CheckOutDivNotClickable} >
+                          <img src={ForwardArrow} alt="" />
+                          <p>Checkout!</p>
+                        </div>
+                      }
+
                     </div>
                   </div>
                 </div>
